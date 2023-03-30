@@ -28,7 +28,7 @@ class SearchController extends Controller
 
             $word = str_replace(['%', '_'], ['\\%', '\\_'], $word);
 
-            $searchTerm = '%'.$word.'%';
+            $searchTerm = $word.'%';
 
             $query->where(function (Builder $subQuery) use ($searchTerm) {
                 $subQuery->where('first_name', 'like', $searchTerm)
