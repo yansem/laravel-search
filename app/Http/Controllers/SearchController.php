@@ -24,7 +24,7 @@ class SearchController extends Controller
         $words = explode(' ', $q);
         foreach ($words as $term) {
 
-            $word = Sanitize::sanitize($term); // <== clean user input
+            $word = Sanitize::sanitize($term);
 
             $word = str_replace(['%', '_'], ['\\%', '\\_'], $word);
 
