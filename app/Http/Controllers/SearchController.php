@@ -21,7 +21,7 @@ class SearchController extends Controller
             ->latest()
             ->select(['id', 'first_name', 'last_name', 'email', 'company', 'created_at']);
 
-        $words = explode(' ', $q);
+        $words = str_getcsv($q, ' ');
         foreach ($words as $term) {
 
             $word = Sanitize::sanitize($term);
